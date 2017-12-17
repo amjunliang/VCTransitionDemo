@@ -32,11 +32,10 @@
 - (void)dealWithOperation:(ZYPopupWindowOperation *)popupWindowOperation {
     UIViewController *popVC = popupWindowOperation.viewController;
     UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    popVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
     [topVC presentViewController:popVC animated:YES completion:nil];
 }
 
-- (ZYPopupWindowOperation *)getPaxPriorityOperation
+- (ZYPopupWindowOperation *)getMaxPriorityOperation
 {
     
     if (!self.datas.count ) {
@@ -44,14 +43,16 @@
     }
     
     NSInteger maxPriority = 0;
-    NSInteger index = 0;
-    for (ZYPopupWindowOperation *op in self.datas) {
+    ZYPopupWindowOperation *resOp;
+    for (int i = 0;i<self.datas.count;i++) {
+        ZYPopupWindowOperation *op = self.datas[i];
         if (op.priority>maxPriority) {
-            index = [self.datas indexOfObject:op];
+            maxPriority = op.priority;
+            resOp = op;
         }
     }
     
-    return self.datas[index];
+    return resOp;
 }
 
 - (void)addPopupWindowOperation:(ZYPopupWindowOperation *)popupWindowOperation
@@ -74,7 +75,7 @@
         if (op.viewController == noti.object) {
             [self.datas removeObject:op];
             if (self.datas.count) {
-                [self dealWithOperation:[self getPaxPriorityOperation]];
+                [self dealWithOperation:[self getMaxPriorityOperation]];
             }
         }
     }

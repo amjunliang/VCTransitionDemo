@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BAF96731FE6B87100129A8F /* ZYPopupWindowAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF96721FE6B87100129A8F /* ZYPopupWindowAnimation.m */; };
 		F61B2D041FE35C1D00C6A635 /* ZYPopupWindowOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B2D031FE35C1D00C6A635 /* ZYPopupWindowOperation.m */; };
 		F61B2D071FE35CA600C6A635 /* ZYPopupWindowOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B2D061FE35CA600C6A635 /* ZYPopupWindowOperationQueue.m */; };
 		F61B2D0E1FE3683000C6A635 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61B2D0D1FE3683000C6A635 /* TestViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BAF96711FE6B87100129A8F /* ZYPopupWindowAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYPopupWindowAnimation.h; sourceTree = "<group>"; };
+		2BAF96721FE6B87100129A8F /* ZYPopupWindowAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYPopupWindowAnimation.m; sourceTree = "<group>"; };
 		F61B2D021FE35C1D00C6A635 /* ZYPopupWindowOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYPopupWindowOperation.h; sourceTree = "<group>"; };
 		F61B2D031FE35C1D00C6A635 /* ZYPopupWindowOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYPopupWindowOperation.m; sourceTree = "<group>"; };
 		F61B2D051FE35CA600C6A635 /* ZYPopupWindowOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYPopupWindowOperationQueue.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				F61B2D031FE35C1D00C6A635 /* ZYPopupWindowOperation.m */,
 				F61B2D051FE35CA600C6A635 /* ZYPopupWindowOperationQueue.h */,
 				F61B2D061FE35CA600C6A635 /* ZYPopupWindowOperationQueue.m */,
+				2BAF96711FE6B87100129A8F /* ZYPopupWindowAnimation.h */,
+				2BAF96721FE6B87100129A8F /* ZYPopupWindowAnimation.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			files = (
 				F64ED7991FE359DA0048F71D /* ViewController.m in Sources */,
 				F64ED7A41FE359DA0048F71D /* main.m in Sources */,
+				2BAF96731FE6B87100129A8F /* ZYPopupWindowAnimation.m in Sources */,
 				F61B2D0E1FE3683000C6A635 /* TestViewController.m in Sources */,
 				F64ED7961FE359DA0048F71D /* AppDelegate.m in Sources */,
 				F6E7E18E1FE37ED300A98650 /* UIViewController+PopupWindow.m in Sources */,
