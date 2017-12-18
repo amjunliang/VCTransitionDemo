@@ -73,8 +73,7 @@
     CGRect fromFrame = [transitionContext initialFrameForViewController:fromViewController];
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
     
-    // Based on our configured targetEdge, derive a normalized vector that will
-    // be used to offset the frame of the presented view controller.
+
     CGVector offset;
     if (self.targetEdge == UIRectEdgeTop)
         offset = CGVectorMake(0.f, 1.f);

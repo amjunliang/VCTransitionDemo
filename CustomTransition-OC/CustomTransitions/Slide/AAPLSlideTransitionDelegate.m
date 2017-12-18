@@ -25,19 +25,10 @@ const char * AAPLSlideTabBarControllerDelegateAssociationKey = "AAPLSlideTabBarC
 
 @implementation AAPLSlideTransitionDelegate
 
-//| ----------------------------------------------------------------------------
-//  Custom implementation of the setter for the tabBarController property.
-//
-//  An instance of the AAPLSlideTransitionDelegate class is defined in the
-//  Tab Bar Controller's scene in the storyboard, and its tabBarControllerOutlet
-//  connected to the tab bar controller.  At unarchive time this method will
-//  be called, providing an opportunity to perform the necessary setup.
-//
 - (void)setTabBarController:(UITabBarController *)tabBarController
 {
     if (tabBarController != _tabBarController) {
-        // Remove all associations of this object from the old tab bar
-        // controller.
+  
         objc_setAssociatedObject(_tabBarController, AAPLSlideTabBarControllerDelegateAssociationKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [_tabBarController.view removeGestureRecognizer:self.panGestureRecognizer];
         if (_tabBarController.delegate == self) _tabBarController.delegate = nil;

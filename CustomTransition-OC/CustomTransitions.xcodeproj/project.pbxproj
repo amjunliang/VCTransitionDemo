@@ -143,11 +143,11 @@
 				D06B69441A5B22AC0009167D /* AAPLExternalStoryboardSegue.h */,
 				D06B69451A5B22AC0009167D /* AAPLExternalStoryboardSegue.m */,
 				D06B694F1A5C51010009167D /* Cross Dissolve */,
-				D06B695B1A5C739B0009167D /* Swipe */,
 				D0B7D1871A68357400AC4A88 /* Custom Presentation */,
-				D0E35F3B1A893F3E00F74DCE /* Adaptive Presentation */,
+				D06B695B1A5C739B0009167D /* Swipe */,
 				D06B693B1A5B1B170009167D /* Checkerboard */,
 				D07773F41AA78D4900EBDCE1 /* Slide */,
+				D0E35F3B1A893F3E00F74DCE /* Adaptive Presentation */,
 				D06B69121A5B05A10009167D /* Supporting Files */,
 			);
 			path = CustomTransitions;

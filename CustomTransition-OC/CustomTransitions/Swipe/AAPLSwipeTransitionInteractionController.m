@@ -22,18 +22,12 @@
 //| ----------------------------------------------------------------------------
 - (instancetype)initWithGestureRecognizer:(UIScreenEdgePanGestureRecognizer *)gestureRecognizer edgeForDragging:(UIRectEdge)edge
 {
-    NSAssert(edge == UIRectEdgeTop || edge == UIRectEdgeBottom ||
-             edge == UIRectEdgeLeft || edge == UIRectEdgeRight,
-             @"edgeForDragging must be one of UIRectEdgeTop, UIRectEdgeBottom, UIRectEdgeLeft, or UIRectEdgeRight.");
     
     self = [super init];
     if (self)
     {
         _gestureRecognizer = gestureRecognizer;
         _edge = edge;
-        
-        // Add self as an observer of the gesture recognizer so that this
-        // object receives updates as the user moves their finger.
         [_gestureRecognizer addTarget:self action:@selector(gestureRecognizeDidUpdate:)];
     }
     return self;
@@ -57,50 +51,10 @@
 //| ----------------------------------------------------------------------------
 - (void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    // Save the transitionContext for later.
-    self.transitionContext = transitionContext;
-    
+    self.transitionContext = transitionContext;    
     [super startInteractiveTransition:transitionContext];
 }
 
-
-//| ----------------------------------------------------------------------------
-//! Returns the offset of the pan gesture recognizer from the edge of the
-//! screen as a percentage of the transition container view's width or height.
-//! This is the percent completed for the interactive transition.
-//
-- (CGFloat)percentForGesture:(UIScreenEdgePanGestureRecognizer *)gesture
-{
-    // Because view controllers will be sliding on and off screen as part
-    // of the animation, we want to base our calculations in the coordinate
-    // space of the view that will not be moving: the containerView of the
-    // transition context.
-    UIView *transitionContainerView = self.transitionContext.containerView;
-    
-    CGPoint locationInSourceView = [gesture locationInView:transitionContainerView];
-    
-    // Figure out what percentage we've gone.
-
-    CGFloat width = CGRectGetWidth(transitionContainerView.bounds);
-    CGFloat height = CGRectGetHeight(transitionContainerView.bounds);
-    
-    // Return an appropriate percentage based on which edge we're dragging
-    // from.
-    if (self.edge == UIRectEdgeRight)
-        return (width - locationInSourceView.x) / width;
-    else if (self.edge == UIRectEdgeLeft)
-        return locationInSourceView.x / width;
-    else if (self.edge == UIRectEdgeBottom)
-        return (height - locationInSourceView.y) / height;
-    else if (self.edge == UIRectEdgeTop)
-        return locationInSourceView.y / height;
-    else
-        return 0.f;
-}
-
-
-//| ----------------------------------------------------------------------------
-//! Action method for the gestureRecognizer.
 //
 - (IBAction)gestureRecognizeDidUpdate:(UIScreenEdgePanGestureRecognizer *)gestureRecognizer
 {
@@ -130,4 +84,32 @@
     }
 }
 
+- (CGFloat)percentForGesture:(UIScreenEdgePanGestureRecognizer *)gesture
+{
+    // Because view controllers will be sliding on and off screen as part
+    // of the animation, we want to base our calculations in the coordinate
+    // space of the view that will not be moving: the containerView of the
+    // transition context.
+    UIView *transitionContainerView = self.transitionContext.containerView;
+    
+    CGPoint locationInSourceView = [gesture locationInView:transitionContainerView];
+    
+    // Figure out what percentage we've gone.
+    
+    CGFloat width = CGRectGetWidth(transitionContainerView.bounds);
+    CGFloat height = CGRectGetHeight(transitionContainerView.bounds);
+    
+    // Return an appropriate percentage based on which edge we're dragging
+    // from.
+    if (self.edge == UIRectEdgeRight)
+        return (width - locationInSourceView.x) / width;
+    else if (self.edge == UIRectEdgeLeft)
+        return locationInSourceView.x / width;
+    else if (self.edge == UIRectEdgeBottom)
+        return (height - locationInSourceView.y) / height;
+    else if (self.edge == UIRectEdgeTop)
+        return locationInSourceView.y / height;
+    else
+        return 0.f;
+}
 @end

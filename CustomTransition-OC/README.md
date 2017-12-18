@@ -8,9 +8,6 @@ Custom View Controller Presentations and Transitions demonstrates using the view
 
 This example implements a full screen presentation that transitions between view controllers using a cross dissolve animation.  It demonstrates the minimum configuration necessary to implement a custom transition.
 
-### Swipe ###
-
-This example implements a full screen presentation that transitions between view controllers by sliding the presented view controller on and off the screen.  You will learn how to implement UIPercentDrivenInteractiveTransition to add interactivity to your transitions.
 
 ### Custom Presentation ###
 
@@ -19,6 +16,13 @@ This example implements a custom presentation that displays the presented view c
 ### Adaptive Presentation ###
 
 This example implements a custom presentation that responds to size class changes.  You will learn how to implement UIAdaptivePresentationControllerDelegate to adapt your presentation to the compact horizontal size class.
+
+### Swipe ###
+
+This example implements a full screen presentation that transitions between view controllers by sliding the presented view controller on and off the screen.  You will learn how to implement UIPercentDrivenInteractiveTransition to add interactivity to your transitions.
+
+
+
 
 ### Checkerboard ###
 

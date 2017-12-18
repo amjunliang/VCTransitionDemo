@@ -99,6 +99,7 @@
 //  the shadow on presentationWrapperView is disabled for the duration
 //  of the rotation animation.
 //
+
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
