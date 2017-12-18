@@ -12,6 +12,7 @@
 @interface ZYPopupWindowOperationQueue ()
 
 @property (nonatomic, strong) NSMutableArray *datas;
+@property (nonatomic, strong) NSRecursiveLock *lock;
 
 @end
 
@@ -21,6 +22,8 @@
 {
     self = [super init];
     if (self) {
+        self.lock = [NSRecursiveLock new];
+        
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reiciveZYSwizzling_viewDidDisappearNotification:) name:ZYSwizzling_viewDidDisappearNotification object:nil];
     }
     return self;
@@ -37,13 +40,13 @@
 
 - (ZYPopupWindowOperation *)getMaxPriorityOperation
 {
-    
     if (!self.datas.count ) {
         return nil;
     }
     
     NSInteger maxPriority = 0;
     ZYPopupWindowOperation *resOp;
+    //nssort
     for (int i = 0;i<self.datas.count;i++) {
         ZYPopupWindowOperation *op = self.datas[i];
         if (op.priority>maxPriority) {
@@ -61,7 +64,9 @@
         return;
     }
     
+    [self.lock lock];
     [self.datas addObject:popupWindowOperation];
+    [self.lock unlock];
     if (self.datas.count == 1) {
         [self dealWithOperation:popupWindowOperation];
     }
@@ -72,6 +77,7 @@
 {    
     for (int i = 0;i<self.datas.count;i++) {
         ZYPopupWindowOperation *op = self.datas[i];
+        //检测在vc在当前queue
         if (op.viewController == noti.object) {
             [self.datas removeObject:op];
             if (self.datas.count) {

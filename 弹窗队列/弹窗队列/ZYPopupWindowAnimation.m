@@ -21,6 +21,7 @@
         _mask.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
         [_mask addGestureRecognizer:tap];
         _mask.userInteractionEnabled = YES;
+        _mask.frame = CGRectMake(0, 0, 1000, 10000);
     }
     return _mask;
 }
@@ -48,7 +49,6 @@
     if (presented) {
         _mask.alpha = 0;
         
-        self.mask.frame = transitionView.bounds;
         [transitionView insertSubview:self.mask atIndex:0];
         [transitionView addSubview: toController.view];
         [transitionView bringSubviewToFront:toController.view];

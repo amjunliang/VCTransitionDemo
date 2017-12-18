@@ -14,7 +14,6 @@
 		F64ED7961FE359DA0048F71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F64ED7951FE359DA0048F71D /* AppDelegate.m */; };
 		F64ED7991FE359DA0048F71D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F64ED7981FE359DA0048F71D /* ViewController.m */; };
 		F64ED79C1FE359DA0048F71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64ED79A1FE359DA0048F71D /* Main.storyboard */; };
-		F64ED79E1FE359DA0048F71D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F64ED79D1FE359DA0048F71D /* Assets.xcassets */; };
 		F64ED7A11FE359DA0048F71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F64ED79F1FE359DA0048F71D /* LaunchScreen.storyboard */; };
 		F64ED7A41FE359DA0048F71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F64ED7A31FE359DA0048F71D /* main.m */; };
 		F64ED7AE1FE359DA0048F71D /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F64ED7AD1FE359DA0048F71D /* ____Tests.m */; };
@@ -54,7 +53,6 @@
 		F64ED7971FE359DA0048F71D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F64ED7981FE359DA0048F71D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F64ED79B1FE359DA0048F71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F64ED79D1FE359DA0048F71D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F64ED7A01FE359DA0048F71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F64ED7A21FE359DA0048F71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F64ED7A31FE359DA0048F71D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,14 +94,13 @@
 		F61B2D011FE35C0300C6A635 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				F6E7E18C1FE37ED300A98650 /* UIViewController+PopupWindow.h */,
-				F6E7E18D1FE37ED300A98650 /* UIViewController+PopupWindow.m */,
+				F6CF25D11FE7966100D0F24F /* Helper */,
 				F61B2D021FE35C1D00C6A635 /* ZYPopupWindowOperation.h */,
 				F61B2D031FE35C1D00C6A635 /* ZYPopupWindowOperation.m */,
+				F6E7E18C1FE37ED300A98650 /* UIViewController+PopupWindow.h */,
+				F6E7E18D1FE37ED300A98650 /* UIViewController+PopupWindow.m */,
 				F61B2D051FE35CA600C6A635 /* ZYPopupWindowOperationQueue.h */,
 				F61B2D061FE35CA600C6A635 /* ZYPopupWindowOperationQueue.m */,
-				2BAF96711FE6B87100129A8F /* ZYPopupWindowAnimation.h */,
-				2BAF96721FE6B87100129A8F /* ZYPopupWindowAnimation.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -136,10 +133,11 @@
 				F64ED7951FE359DA0048F71D /* AppDelegate.m */,
 				F64ED7971FE359DA0048F71D /* ViewController.h */,
 				F64ED7981FE359DA0048F71D /* ViewController.m */,
+				2BAF96711FE6B87100129A8F /* ZYPopupWindowAnimation.h */,
+				2BAF96721FE6B87100129A8F /* ZYPopupWindowAnimation.m */,
 				F61B2D0C1FE3683000C6A635 /* TestViewController.h */,
 				F61B2D0D1FE3683000C6A635 /* TestViewController.m */,
 				F64ED79A1FE359DA0048F71D /* Main.storyboard */,
-				F64ED79D1FE359DA0048F71D /* Assets.xcassets */,
 				F64ED79F1FE359DA0048F71D /* LaunchScreen.storyboard */,
 				F64ED7A21FE359DA0048F71D /* Info.plist */,
 				F64ED7A31FE359DA0048F71D /* main.m */,
@@ -163,6 +161,13 @@
 				F64ED7BA1FE359DA0048F71D /* Info.plist */,
 			);
 			path = "弹窗队列UITests";
+			sourceTree = "<group>";
+		};
+		F6CF25D11FE7966100D0F24F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F64ED7A11FE359DA0048F71D /* LaunchScreen.storyboard in Resources */,
-				F64ED79E1FE359DA0048F71D /* Assets.xcassets in Resources */,
 				F64ED79C1FE359DA0048F71D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
