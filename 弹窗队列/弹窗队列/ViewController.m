@@ -9,12 +9,12 @@
 #import "ViewController.h"
 #import "TestViewController.h"
 #import "ZYPopupWindowOperationQueue.h"
-#import "ZYPopupWindowAnimation.h"
+#import "ZYPopupWindowPresentationController.h"
 
-@interface ViewController ()<UIViewControllerTransitioningDelegate>
+@interface ViewController ()
 {
     ZYPopupWindowOperationQueue *_queue;
-    ZYPopupWindowAnimation *_animate;
+    ZYPopupWindowPresentationController *_presentationController;
 }
 
 @end
@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _queue = [ZYPopupWindowOperationQueue new];
-    _animate = [ZYPopupWindowAnimation new];
     
     /*
      1. 队列的暂停和继续.
@@ -64,16 +63,15 @@
     for (int i = 0; i<5; i++) {
         
         TestViewController *testVC = [TestViewController new];
-        testVC.modalPresentationStyle = UIModalPresentationOverFullScreen;
-        testVC.transitioningDelegate = self;
         
         ZYPopupWindowOperation *op = [[ZYPopupWindowOperation alloc]initWithViewController:testVC];
-        op.priority = 1;
+        //这只转场动画类型
         
         if (i == 3) {
             op.priority = 100;
             testVC.view.backgroundColor = [UIColor orangeColor];
         }
+        
         //[shareZYPopupWindowOperationQueue addPopupWindowOperation:op];
         //[self presentViewController:testVC animated:YES completion:nil];
         [_queue addPopupWindowOperation:op];
@@ -93,15 +91,6 @@
     //[shareZYPopupWindowOperationQueue addPopupWindowOperation:op];
     [_queue addPopupWindowOperation:op];
 
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-{
-    return _animate;
-}
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    return _animate;
 }
 
 @end

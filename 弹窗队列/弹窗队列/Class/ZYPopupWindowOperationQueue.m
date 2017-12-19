@@ -8,6 +8,7 @@
 
 #import "ZYPopupWindowOperationQueue.h"
 #import "UIViewController+PopupWindow.h"
+#import "ZYPopupWindowPresentationController.h"
 
 @interface ZYPopupWindowOperationQueue ()
 
@@ -33,19 +34,34 @@
 
 
 - (void)dealWithOperation:(ZYPopupWindowOperation *)popupWindowOperation {
+    
+    if (!popupWindowOperation) {
+        return;
+    }
+    
     UIViewController *popVC = popupWindowOperation.viewController;
     UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    //转场控制
+    popVC.modalPresentationStyle = UIModalPresentationCustom;
+    Class class = [ZYPopupWindowPresentationController class];
+    if (
+        [popupWindowOperation.class isKindOfClass:[UIPresentationController class]] ||
+        [popupWindowOperation.class conformsToProtocol:@protocol(UIViewControllerTransitioningDelegate)] ||
+        [popupWindowOperation.class conformsToProtocol:@protocol(UIViewControllerAnimatedTransitioning)]
+        ) {
+        class = popupWindowOperation.class;
+    }
+    ZYPopupWindowPresentationController *presentationController = [[class alloc] initWithPresentedViewController:popVC presentingViewController:popVC];
+    popVC.transitioningDelegate = presentationController;
+    
     [topVC presentViewController:popVC animated:YES completion:nil];
 }
 
 - (ZYPopupWindowOperation *)getMaxPriorityOperation
 {
-    if (!self.datas.count ) {
-        return nil;
-    }
-    
     NSInteger maxPriority = 0;
-    ZYPopupWindowOperation *resOp;
+    ZYPopupWindowOperation *resOp = self.datas.firstObject;
     //nssort
     for (int i = 0;i<self.datas.count;i++) {
         ZYPopupWindowOperation *op = self.datas[i];
@@ -58,9 +74,9 @@
     return resOp;
 }
 
-- (void)addPopupWindowOperation:(ZYPopupWindowOperation *)popupWindowOperation
+- (void)addPopupWindowOperation:( ZYPopupWindowOperation *)popupWindowOperation
 {
-    if (!popupWindowOperation.viewController) {
+    if (!popupWindowOperation) {
         return;
     }
     
@@ -74,11 +90,11 @@
 }
 
 - (void)reiciveZYSwizzling_viewDidDisappearNotification:(NSNotification *)noti
-{    
+{
+    //vc,
     for (int i = 0;i<self.datas.count;i++) {
         ZYPopupWindowOperation *op = self.datas[i];
-        //检测在vc在当前queue
-        if (op.viewController == noti.object) {
+        if (op.viewController == noti.object) {// 判断
             [self.datas removeObject:op];
             if (self.datas.count) {
                 [self dealWithOperation:[self getMaxPriorityOperation]];
@@ -89,7 +105,6 @@
 
 + (instancetype)share
 {
-    
     static dispatch_once_t onceToken;
     static ZYPopupWindowOperationQueue *instance;
     dispatch_once(&onceToken, ^{

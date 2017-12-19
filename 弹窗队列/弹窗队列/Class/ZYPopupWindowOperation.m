@@ -15,8 +15,12 @@
 
 @implementation ZYPopupWindowOperation
 
-- (instancetype)initWithViewController:(UIViewController *)popVC
+- (instancetype)initWithViewController:( UIViewController  *)popVC
 {
+    if (!popVC) {
+        return nil;
+    }
+    
     self = [super init];
     if (self) {
         _viewController = popVC;

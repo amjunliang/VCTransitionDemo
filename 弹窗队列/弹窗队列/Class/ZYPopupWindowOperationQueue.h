@@ -13,7 +13,7 @@
 @interface ZYPopupWindowOperationQueue : NSObject
 
 /// 添加一项弹窗任务, 并立即开始.
-- (void)addPopupWindowOperation:(ZYPopupWindowOperation *)popupWindowOperation;
+- (void)addPopupWindowOperation:( ZYPopupWindowOperation *)popupWindowOperation;
 
 /// 全局队列
 #define shareZYPopupWindowOperationQueue [ZYPopupWindowOperationQueue share]

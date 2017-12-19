@@ -16,6 +16,9 @@
 /// 弹窗控制器
 @property (nonatomic, strong) UIViewController *viewController;
 
+/// 弹窗动画控制类型, 可以为空, 使用默认
+@property (nonatomic, strong)  Class animateClass;
+
 /// 优先级
 @property (nonatomic, assign) NSInteger priority;
 
