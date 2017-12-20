@@ -31,7 +31,7 @@
     v.frame = CGRectMake(0, 0, 100, 100);
     v.backgroundColor = [UIColor redColor];
     
-    
+    self.navigationController.hidesBottomBarWhenPushed = YES;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:v];
 
