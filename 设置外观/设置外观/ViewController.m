@@ -22,9 +22,21 @@
     [[UIView appearance] setBackgroundColor:[UIColor orangeColor]];
     // Do any additional setup after loading the view, typically from a nib.
     
+    /*
+     一般地，UIView 的子类，和直接调用 setter 一样，直接通过 appearance 对其设置属性，当然时机在被添加到视图树之前, 并且 seter 方法从未被调用过。
+     建议在 appearance 的属性后加上 UI_APPEARANCE_SELECTOR 宏。
+     复杂需求可以考虑 UIAppearance 协议里另外几个方法来实现。
+     
+     future, no create
+     https://stackoverflow.com/questions/19985270/ios-7-uinavigationbar-appearance-not-working-first-time
+     */
+    
     [TestAppearance appearance].name = @"test";
     [TestAppearance appearance].haha = 100;
     test = [TestAppearance new];
+    //test.name = @"change";
+    //test.name = nil;
+    [TestAppearance appearance].name = @"test";
     [self.view addSubview:test];
     
     [test class];
@@ -35,6 +47,9 @@
 }
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    [test removeFromSuperview];
+    [self.view addSubview:test];
+
     
 }
 
