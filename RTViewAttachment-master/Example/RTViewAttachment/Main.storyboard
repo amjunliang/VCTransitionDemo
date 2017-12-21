@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g4O-65-iys">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="kuR-zt-mjO">
+            <objects>
+                <navigationController id="g4O-65-iys" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VqP-07-X2d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="OhC-id-RkW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFK-op-9hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394" y="433"/>
+        </scene>
+        <!--Delegate-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="RTViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKO-LQ-LG4" customClass="RTViewAttachmentTextView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="whP-gf-Uak" id="Aza-hv-7fi"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xKO-LQ-LG4" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" id="kaV-i2-png"/>
+                            <constraint firstAttribute="trailing" secondItem="xKO-LQ-LG4" secondAttribute="trailing" id="n9B-rB-0Ix"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="xKO-LQ-LG4" secondAttribute="bottom" id="tHa-vV-G0q"/>
+                            <constraint firstItem="xKO-LQ-LG4" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="xD8-WA-Xbe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Editor" id="n6b-9e-kgd">
+                        <barButtonItem key="leftBarButtonItem" title="Prepend" id="FgQ-4i-IFx">
+                            <connections>
+                                <action selector="onPrepend:" destination="whP-gf-Uak" id="Nlm-xh-Xtf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Append" id="m6Z-2O-M2O">
+                            <connections>
+                                <action selector="onAppend:" destination="whP-gf-Uak" id="1SG-Gx-GAB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputAccessoryView" destination="eVq-jF-NZV" id="VDi-CE-NiE"/>
+                        <outlet property="textView" destination="xKO-LQ-LG4" id="PDg-Qg-k3e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVq-jF-NZV">
+                    <rect key="frame" x="0.0" y="0.0" width="272" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-Pq-bpv">
+                            <rect key="frame" x="0.0" y="3" width="121" height="30"/>
+                            <state key="normal" title="SearchBar"/>
+                            <connections>
+                                <action selector="onInsertSearchBar:" destination="whP-gf-Uak" eventType="touchUpInside" id="MEg-Sg-uw6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dr4-1J-Bx7">
+                            <rect key="frame" x="151" y="3" width="121" height="30"/>
+                            <state key="normal" title="Image"/>
+                            <connections>
+                                <action selector="onInsertImage:" destination="whP-gf-Uak" eventType="touchUpInside" id="fGd-fh-l3e"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Qr5-Pq-bpv" firstAttribute="centerY" secondItem="eVq-jF-NZV" secondAttribute="centerY" id="0yQ-Pj-N2d"/>
+                        <constraint firstItem="Dr4-1J-Bx7" firstAttribute="centerY" secondItem="eVq-jF-NZV" secondAttribute="centerY" id="43J-3w-0F3"/>
+                        <constraint firstItem="Dr4-1J-Bx7" firstAttribute="width" secondItem="Qr5-Pq-bpv" secondAttribute="width" id="5I0-ST-NuZ"/>
+                        <constraint firstItem="Qr5-Pq-bpv" firstAttribute="leading" secondItem="eVq-jF-NZV" secondAttribute="leading" id="CeU-VN-BdQ"/>
+                        <constraint firstAttribute="height" constant="36" id="T0X-44-gaw"/>
+                        <constraint firstItem="Dr4-1J-Bx7" firstAttribute="leading" secondItem="Qr5-Pq-bpv" secondAttribute="trailing" constant="30" id="eMd-Jx-9j1"/>
+                        <constraint firstAttribute="trailing" secondItem="Dr4-1J-Bx7" secondAttribute="trailing" id="kpJ-yF-YCm"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="305" y="433"/>
+        </scene>
+    </scenes>
+</document>

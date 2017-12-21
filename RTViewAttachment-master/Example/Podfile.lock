@@ -1,0 +1,16 @@
+PODS:
+  - RTViewAttachment (0.1.1)
+
+DEPENDENCIES:
+  - RTViewAttachment (from `../`)
+
+EXTERNAL SOURCES:
+  RTViewAttachment:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RTViewAttachment: d5000343777e60cc77202f7279873134e3233d89
+
+PODFILE CHECKSUM: 6abd0c7f12566a03d49295208b748b5b565dc703
+
+COCOAPODS: 1.2.1
