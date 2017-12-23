@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BCC93B41FEDDD3E00E925AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93B31FEDDD3E00E925AA /* AppDelegate.m */; };
+		2BCC93B71FEDDD3E00E925AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93B61FEDDD3E00E925AA /* ViewController.m */; };
+		2BCC93BA1FEDDD3E00E925AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCC93B81FEDDD3E00E925AA /* Main.storyboard */; };
+		2BCC93BC1FEDDD3E00E925AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BCC93BB1FEDDD3E00E925AA /* Assets.xcassets */; };
+		2BCC93BF1FEDDD3E00E925AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCC93BD1FEDDD3E00E925AA /* LaunchScreen.storyboard */; };
+		2BCC93C21FEDDD3E00E925AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93C11FEDDD3E00E925AA /* main.m */; };
+		2BCC93CA1FEDDD5B00E925AA /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93C91FEDDD5B00E925AA /* MyTextView.m */; };
+		2BCC93CD1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93CC1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m */; };
+		2BCC93D01FEEB93100E925AA /* ZYRichTextLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93CF1FEEB93100E925AA /* ZYRichTextLayoutManager.m */; };
+		2BCC93D31FEEC59C00E925AA /* ZYRichTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93D21FEEC59C00E925AA /* ZYRichTextAttachment.m */; };
+		2BCC93D51FEEC7D000E925AA /* a.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2BCC93D41FEEC7D000E925AA /* a.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2BCC93AF1FEDDD3E00E925AA /* 编辑器加粗标红图片解析.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "编辑器加粗标红图片解析.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCC93B21FEDDD3E00E925AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2BCC93B31FEDDD3E00E925AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2BCC93B51FEDDD3E00E925AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2BCC93B61FEDDD3E00E925AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2BCC93B91FEDDD3E00E925AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BCC93BB1FEDDD3E00E925AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BCC93BE1FEDDD3E00E925AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BCC93C01FEDDD3E00E925AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BCC93C11FEDDD3E00E925AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2BCC93C81FEDDD5B00E925AA /* MyTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTextView.h; sourceTree = "<group>"; };
+		2BCC93C91FEDDD5B00E925AA /* MyTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
+		2BCC93CB1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+ZYRichTextEditer.h"; sourceTree = "<group>"; };
+		2BCC93CC1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+ZYRichTextEditer.m"; sourceTree = "<group>"; };
+		2BCC93CE1FEEB93100E925AA /* ZYRichTextLayoutManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYRichTextLayoutManager.h; sourceTree = "<group>"; };
+		2BCC93CF1FEEB93100E925AA /* ZYRichTextLayoutManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYRichTextLayoutManager.m; sourceTree = "<group>"; };
+		2BCC93D11FEEC59C00E925AA /* ZYRichTextAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYRichTextAttachment.h; sourceTree = "<group>"; };
+		2BCC93D21FEEC59C00E925AA /* ZYRichTextAttachment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYRichTextAttachment.m; sourceTree = "<group>"; };
+		2BCC93D41FEEC7D000E925AA /* a.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = a.jpeg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BCC93AC1FEDDD3E00E925AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BCC93A61FEDDD3E00E925AA = {
+			isa = PBXGroup;
+			children = (
+				2BCC93B11FEDDD3E00E925AA /* 编辑器加粗标红图片解析 */,
+				2BCC93B01FEDDD3E00E925AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BCC93B01FEDDD3E00E925AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BCC93AF1FEDDD3E00E925AA /* 编辑器加粗标红图片解析.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BCC93B11FEDDD3E00E925AA /* 编辑器加粗标红图片解析 */ = {
+			isa = PBXGroup;
+			children = (
+				2BCC93D41FEEC7D000E925AA /* a.jpeg */,
+				2BCC93B21FEDDD3E00E925AA /* AppDelegate.h */,
+				2BCC93B31FEDDD3E00E925AA /* AppDelegate.m */,
+				2BCC93B51FEDDD3E00E925AA /* ViewController.h */,
+				2BCC93B61FEDDD3E00E925AA /* ViewController.m */,
+				2BCC93C81FEDDD5B00E925AA /* MyTextView.h */,
+				2BCC93C91FEDDD5B00E925AA /* MyTextView.m */,
+				2BCC93CB1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.h */,
+				2BCC93CC1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m */,
+				2BCC93CE1FEEB93100E925AA /* ZYRichTextLayoutManager.h */,
+				2BCC93CF1FEEB93100E925AA /* ZYRichTextLayoutManager.m */,
+				2BCC93D11FEEC59C00E925AA /* ZYRichTextAttachment.h */,
+				2BCC93D21FEEC59C00E925AA /* ZYRichTextAttachment.m */,
+				2BCC93B81FEDDD3E00E925AA /* Main.storyboard */,
+				2BCC93BB1FEDDD3E00E925AA /* Assets.xcassets */,
+				2BCC93BD1FEDDD3E00E925AA /* LaunchScreen.storyboard */,
+				2BCC93C01FEDDD3E00E925AA /* Info.plist */,
+				2BCC93C11FEDDD3E00E925AA /* main.m */,
+			);
+			path = "编辑器加粗标红图片解析";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BCC93AE1FEDDD3E00E925AA /* 编辑器加粗标红图片解析 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BCC93C51FEDDD3E00E925AA /* Build configuration list for PBXNativeTarget "编辑器加粗标红图片解析" */;
+			buildPhases = (
+				2BCC93AB1FEDDD3E00E925AA /* Sources */,
+				2BCC93AC1FEDDD3E00E925AA /* Frameworks */,
+				2BCC93AD1FEDDD3E00E925AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "编辑器加粗标红图片解析";
+			productName = "编辑器加粗标红图片解析";
+			productReference = 2BCC93AF1FEDDD3E00E925AA /* 编辑器加粗标红图片解析.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BCC93A71FEDDD3E00E925AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "马俊良";
+				TargetAttributes = {
+					2BCC93AE1FEDDD3E00E925AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2BCC93AA1FEDDD3E00E925AA /* Build configuration list for PBXProject "编辑器加粗标红图片解析" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BCC93A61FEDDD3E00E925AA;
+			productRefGroup = 2BCC93B01FEDDD3E00E925AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BCC93AE1FEDDD3E00E925AA /* 编辑器加粗标红图片解析 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BCC93AD1FEDDD3E00E925AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BCC93BF1FEDDD3E00E925AA /* LaunchScreen.storyboard in Resources */,
+				2BCC93BC1FEDDD3E00E925AA /* Assets.xcassets in Resources */,
+				2BCC93BA1FEDDD3E00E925AA /* Main.storyboard in Resources */,
+				2BCC93D51FEEC7D000E925AA /* a.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BCC93AB1FEDDD3E00E925AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BCC93B71FEDDD3E00E925AA /* ViewController.m in Sources */,
+				2BCC93CD1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m in Sources */,
+				2BCC93CA1FEDDD5B00E925AA /* MyTextView.m in Sources */,
+				2BCC93D31FEEC59C00E925AA /* ZYRichTextAttachment.m in Sources */,
+				2BCC93C21FEDDD3E00E925AA /* main.m in Sources */,
+				2BCC93B41FEDDD3E00E925AA /* AppDelegate.m in Sources */,
+				2BCC93D01FEEB93100E925AA /* ZYRichTextLayoutManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2BCC93B81FEDDD3E00E925AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BCC93B91FEDDD3E00E925AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BCC93BD1FEDDD3E00E925AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BCC93BE1FEDDD3E00E925AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BCC93C31FEDDD3E00E925AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2BCC93C41FEDDD3E00E925AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BCC93C61FEDDD3E00E925AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "编辑器加粗标红图片解析/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "c.-----------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BCC93C71FEDDD3E00E925AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "编辑器加粗标红图片解析/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "c.-----------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BCC93AA1FEDDD3E00E925AA /* Build configuration list for PBXProject "编辑器加粗标红图片解析" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BCC93C31FEDDD3E00E925AA /* Debug */,
+				2BCC93C41FEDDD3E00E925AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BCC93C51FEDDD3E00E925AA /* Build configuration list for PBXNativeTarget "编辑器加粗标红图片解析" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BCC93C61FEDDD3E00E925AA /* Debug */,
+				2BCC93C71FEDDD3E00E925AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BCC93A71FEDDD3E00E925AA /* Project object */;
+}
