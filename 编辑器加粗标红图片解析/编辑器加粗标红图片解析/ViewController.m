@@ -97,7 +97,7 @@
     ZYRichTextAttachment *attachMent = [ZYRichTextAttachment new];
     attachMent.attachedView = [self attachView];
     [self.textView insertRichTextAttachment:attachMent];
-    
+    [self.textView insertText:@"\n\n"];
 }
 
 - (UIView *)attachView
@@ -105,6 +105,10 @@
     UIView *v = [UIView new];
     v.backgroundColor = [UIColor orangeColor];
     v.frame = CGRectMake(0, 0, 100, 100);
+    
+    UISwitch *_button = [[UISwitch alloc] init];
+    [_button sizeToFit];
+    [v addSubview:_button];
     
     return v;
     
