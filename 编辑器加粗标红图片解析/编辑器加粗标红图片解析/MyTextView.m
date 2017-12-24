@@ -15,7 +15,7 @@
 static NSString const *kNSAttachment = @"NSAttachment";
 @implementation MyTextView
 #pragma mark - # 标红色
-- (NSDictionary *)getInsetAttDic
+- (NSDictionary *)insetAttDic
 {
     static NSInteger attIndex = 0;
     
@@ -47,7 +47,7 @@ static NSString const *kNSAttachment = @"NSAttachment";
         return dic?:@{};
     }else{
         attIndex = attIndex -1;
-        return [self getInsetAttDic];
+        return [self insetAttDic];
     }
 }
 - (NSMutableParagraphStyle *)paragraphStyle
@@ -68,7 +68,7 @@ static NSString const *kNSAttachment = @"NSAttachment";
 
 - (void)setTypingAttributes:(NSDictionary<NSString *,id> *)typingAttributes
 {
-    NSDictionary * dic = [self getInsetAttDic];
+    NSDictionary * dic = [self insetAttDic];
     NSMutableDictionary *mulDic = dic.mutableCopy?:@{}.mutableCopy;
     [mulDic addEntriesFromDictionary:typingAttributes];
     [super setTypingAttributes:mulDic];
@@ -77,40 +77,24 @@ static NSString const *kNSAttachment = @"NSAttachment";
     [self.textStorage addAttributes:mulDic range:self.selectedRange];
 }
 
-- (NSRange)getSelectAttributeRange {
-    NSRange selectRange = self.selectedRange;
-
-    if (selectRange.length == 0) {
-        
-        char lastChar = 'a';
-        if (selectRange.location>0) {
-            lastChar = [self.text characterAtIndex:selectRange.location-1];
-        }
-        
-        if (lastChar == '\n' ) {
-            selectRange = NSMakeRange(selectRange.location,1);
-        }else{
-            selectRange = NSMakeRange(selectRange.location-1, 1);
-        }
-        
-        //check
-        if (selectRange.location +selectRange.length>self.text.length) {
-            selectRange.length = 0;
-        }
+- (NSAttributedString *)currentttrCursorAttibutedString {
+    NSRange selectRange = [self selectedRange];
+    NSAttributedString *att;
+    if (selectRange.length) {
+        att = [self.attributedText attributedSubstringFromRange:selectRange];
+    }else{
+        att = [[NSAttributedString alloc]initWithString:@" " attributes:self.typingAttributes];
     }
-    return selectRange;
+    return att;
 }
 
 - (BOOL)selecMarkRed
 {
-    NSRange selectRange = [self getSelectAttributeRange];
-    NSAttributedString *att = [self.attributedText attributedSubstringFromRange:selectRange];
-    return att.markRed;
+    return [self currentttrCursorAttibutedString].markRed;
 }
 
 - (void)setSelecMarkRed:(BOOL)selecTmarkRed
 {
-    
     if (selecTmarkRed) {
         [self setTypingAttributes: @{NSForegroundColorAttributeName:[UIColor redColor]}];
     } else {
@@ -122,9 +106,8 @@ static NSString const *kNSAttachment = @"NSAttachment";
 
 - (BOOL)selecMarkBlod
 {
-    NSRange selectRange = [self getSelectAttributeRange];
-    NSAttributedString *att = [self.attributedText attributedSubstringFromRange:selectRange];
-    return att.blod;
+    return [self currentttrCursorAttibutedString].blod;
+
 }
 
 - (void)setSelecMarkBlod:(BOOL)selecMarkBlod{
@@ -148,7 +131,7 @@ static NSString const *kNSAttachment = @"NSAttachment";
     }
     
     NSMutableAttributedString *attachmentAtt = attachment.attributedString.mutableCopy;
-    [attachmentAtt addAttributes:[self getInsetAttDic] range:NSMakeRange(0, attachmentAtt.length)];
+    [attachmentAtt addAttributes:[self insetAttDic] range:NSMakeRange(0, attachmentAtt.length)];
     [self.textStorage insertAttributedString:attachmentAtt atIndex:self.selectedRange.location];
     
     NSRange range = NSMakeRange(MIN(self.textStorage.editedRange.location + self.textStorage.editedRange.length, self.textStorage.length), 0);
@@ -194,6 +177,19 @@ static NSString const *kNSAttachment = @"NSAttachment";
     if (!self.attributedText) {
         return nil;
     }
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithAttributedString:self.textStorage];
+    [self.attributedText enumerateAttributesInRange:self.attributedText.fullRange options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(NSDictionary<NSAttributedStringKey,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
+        NSAttributedString *value = [attrString attributedSubstringFromRange:range];
+        NSLog(@"%@",value.string);
+    }];
+    
+    return @"";
+}
+- (NSString *)html1
+{
+    if (!self.attributedText) {
+        return nil;
+    }
     
     NSArray *exclude = @[@"xml",@"doctype", @"html", @"head", @"body",@"p",@"STYLE",
                          @"APPLET", @"BASEFONT", @"CENTER", @"DIR", @"FONT", @"ISINDEX", @"MENU", @"S", @"STRIKE", @"U"];
@@ -207,5 +203,4 @@ static NSString const *kNSAttachment = @"NSAttachment";
     
     return htmlString;
 }
-
 @end

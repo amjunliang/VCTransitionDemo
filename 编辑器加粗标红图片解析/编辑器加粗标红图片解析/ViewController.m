@@ -55,7 +55,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    NSLog(@"%@",self.textView.html);
+    self.textView.html;
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView
@@ -73,6 +73,9 @@
 
 - (IBAction)blodIte:(UIButton *)sender
 {
+    if (!self.textView.isFirstResponder) {
+        [self.textView becomeFirstResponder];
+    }
     if (sender.selected) {
         self.textView.selecMarkBlod = NO;
     } else {
@@ -85,6 +88,9 @@
 
 - (IBAction)markRedIt:(UIButton *)sender
 {
+    if (!self.textView.isFirstResponder) {
+        [self.textView becomeFirstResponder];
+    }
     
     if (sender.selected) {
         self.textView.selecMarkRed = NO;
@@ -95,6 +101,10 @@
 }
 - (IBAction)insetView:(UIButton *)sender
 {
+    if (!self.textView.isFirstResponder) {
+        [self.textView becomeFirstResponder];
+    }
+    
     ZYRichTextAttachment *attachMent = [ZYRichTextAttachment new];
     attachMent.attachedView = [self attachView];
     [self.textView insertRichTextAttachment:attachMent];
