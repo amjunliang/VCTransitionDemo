@@ -8,6 +8,10 @@
 
 #import "MyTextView.h"
 
+@interface MyTextView ()
+
+@end
+
 static NSString const *kNSAttachment = @"NSAttachment";
 @implementation MyTextView
 #pragma mark - # 标红色
@@ -46,17 +50,17 @@ static NSString const *kNSAttachment = @"NSAttachment";
         return [self getInsetAttDic];
     }
 }
-- (NSParagraphStyle *)paragraphStyle
+- (NSMutableParagraphStyle *)paragraphStyle
 {
     if (!_paragraphStyle) {
-        _paragraphStyle = [NSParagraphStyle defaultParagraphStyle];
+        _paragraphStyle = [NSMutableParagraphStyle defaultParagraphStyle].mutableCopy;
     }
     return _paragraphStyle;
 }
 
 - (NSDictionary *)defaultAttribute
 {
-    return @{NSFontAttributeName: self.font,
+    return @{NSFontAttributeName: self.font?:[UIFont systemFontOfSize:16],
              NSForegroundColorAttributeName: self.textColor?:[UIColor blackColor],
             NSParagraphStyleAttributeName: self.paragraphStyle
             };
@@ -64,7 +68,6 @@ static NSString const *kNSAttachment = @"NSAttachment";
 
 - (void)setTypingAttributes:(NSDictionary<NSString *,id> *)typingAttributes
 {
-    
     NSDictionary * dic = [self getInsetAttDic];
     NSMutableDictionary *mulDic = dic.mutableCopy?:@{}.mutableCopy;
     [mulDic addEntriesFromDictionary:typingAttributes];
@@ -74,13 +77,33 @@ static NSString const *kNSAttachment = @"NSAttachment";
     [self.textStorage addAttributes:mulDic range:self.selectedRange];
 }
 
+- (NSRange)getSelectAttributeRange {
+    NSRange selectRange = self.selectedRange;
+
+    if (selectRange.length == 0) {
+        
+        char lastChar = 'a';
+        if (selectRange.location>0) {
+            lastChar = [self.text characterAtIndex:selectRange.location-1];
+        }
+        
+        if (lastChar == '\n' ) {
+            selectRange = NSMakeRange(selectRange.location,1);
+        }else{
+            selectRange = NSMakeRange(selectRange.location-1, 1);
+        }
+        
+        //check
+        if (selectRange.location +selectRange.length>self.text.length) {
+            selectRange.length = 0;
+        }
+    }
+    return selectRange;
+}
+
 - (BOOL)selecMarkRed
 {
-    NSRange selectRange = self.selectedRange;
-    if (selectRange.length == 0 &&
-        selectRange.location>0) {
-        selectRange = NSMakeRange(selectRange.location-1, 1);
-    }
+    NSRange selectRange = [self getSelectAttributeRange];
     NSAttributedString *att = [self.attributedText attributedSubstringFromRange:selectRange];
     return att.markRed;
 }
@@ -91,7 +114,7 @@ static NSString const *kNSAttachment = @"NSAttachment";
     if (selecTmarkRed) {
         [self setTypingAttributes: @{NSForegroundColorAttributeName:[UIColor redColor]}];
     } else {
-        [self setTypingAttributes: @{NSForegroundColorAttributeName:self.textColor}];
+        [self setTypingAttributes: @{NSForegroundColorAttributeName:[UIColor blackColor]}];
     }
 }
 
@@ -99,11 +122,7 @@ static NSString const *kNSAttachment = @"NSAttachment";
 
 - (BOOL)selecMarkBlod
 {
-    NSRange selectRange = self.selectedRange;
-    if (selectRange.length == 0 &&
-        selectRange.location>0) {
-        selectRange = NSMakeRange(selectRange.location-1, 1);
-    }
+    NSRange selectRange = [self getSelectAttributeRange];
     NSAttributedString *att = [self.attributedText attributedSubstringFromRange:selectRange];
     return att.blod;
 }
@@ -145,16 +164,48 @@ static NSString const *kNSAttachment = @"NSAttachment";
 - (instancetype)init
 {
     ZYRichTextLayoutManager *manger = [ZYRichTextLayoutManager new];
-    NSTextStorage *storage = [[NSTextStorage alloc]init];
+    NSTextStorage *storage = [[NSTextStorage alloc]init];;
     [storage addLayoutManager:manger];
     NSTextContainer *container = [[NSTextContainer alloc]init];
     [manger addTextContainer:container];
     
     self = [super initWithFrame:CGRectZero textContainer:container];
     if (self) {
-        //self.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.typingAttributes = [self defaultAttribute];
     }
     return self;
+}
+
+#pragma mark - # Html 转码
+
+- (void)setHtml:(NSString *)html
+{
+    if (!html) {
+        return;
+    }
+    
+    NSMutableAttributedString * attrStr = [[NSMutableAttributedString alloc] initWithData:[html dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+
+    self.attributedText = attrStr;
+}
+
+- (NSString *)html
+{
+    if (!self.attributedText) {
+        return nil;
+    }
+    
+    NSArray *exclude = @[@"xml",@"doctype", @"html", @"head", @"body",@"p",@"STYLE",
+                         @"APPLET", @"BASEFONT", @"CENTER", @"DIR", @"FONT", @"ISINDEX", @"MENU", @"S", @"STRIKE", @"U"];
+    
+    NSDictionary *htmlAtt = [NSDictionary dictionaryWithObjectsAndKeys:
+                             NSHTMLTextDocumentType, NSDocumentTypeDocumentAttribute,
+                             exclude, @"ExcludedElements", nil];
+    NSError *error;
+    NSData *htmlData = [self.attributedText dataFromRange:NSMakeRange(0,[self.attributedText length]) documentAttributes:htmlAtt error:&error ];
+    NSString *htmlString = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
+    
+    return htmlString;
 }
 
 @end

@@ -16,7 +16,9 @@
 @property(nonatomic, assign) BOOL selecMarkRed;
 @property(nonatomic, assign) BOOL selecMarkBlod;
 
-@property (nonatomic, strong) NSParagraphStyle *paragraphStyle;
+@property(nonatomic, strong) NSString  *html;
+
+@property (nonatomic, strong) NSMutableParagraphStyle *paragraphStyle;
 
 - (void)insertRichTextAttachment:(ZYRichTextAttachment *)attachment;
 @end

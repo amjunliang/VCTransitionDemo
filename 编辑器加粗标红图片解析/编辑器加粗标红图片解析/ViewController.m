@@ -23,14 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self.textView removeFromSuperview];
     
     self.textView  =[[MyTextView alloc]init];
     self.textView.frame = self.view.bounds;
     [self.view addSubview:self.textView];
     [self.view sendSubviewToBack:self.textView];
-    self.textView.font = [UIFont systemFontOfSize:20];
+    self.textView.font = [UIFont systemFontOfSize:50];
+    //self.textView.paragraphStyle.lineSpacing = 300;
     
     self.textView.delegate = self;
     self.textView.allowsEditingTextAttributes = NO;
@@ -54,7 +55,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    //NSLog(@"%@",textView.text);
+    NSLog(@"%@",self.textView.html);
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView
