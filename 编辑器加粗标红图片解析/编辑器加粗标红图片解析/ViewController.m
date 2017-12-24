@@ -108,7 +108,6 @@
     ZYRichTextAttachment *attachMent = [ZYRichTextAttachment new];
     attachMent.attachedView = [self attachView];
     [self.textView insertRichTextAttachment:attachMent];
-    [self.textView insertText:@"\n\n"];
 }
 
 - (UIView *)attachView

@@ -126,22 +126,28 @@ static NSString const *kNSAttachment = @"NSAttachment";
         return;
     }
     
+    [self.textStorage beginEditing];
+    
     if (self.selectedRange.length) {
         [self deleteBackward];
     }
     
+    [self insertText:@"\n"];
     NSMutableAttributedString *attachmentAtt = attachment.attributedString.mutableCopy;
     [attachmentAtt addAttributes:[self insetAttDic] range:NSMakeRange(0, attachmentAtt.length)];
     [self.textStorage insertAttributedString:attachmentAtt atIndex:self.selectedRange.location];
-    
+
     NSRange range = NSMakeRange(MIN(self.textStorage.editedRange.location + self.textStorage.editedRange.length, self.textStorage.length), 0);
-    self.selectedRange = range;
     
     //add view
     attachment.attachedView.alpha = 0;
     if (self.subviews.firstObject) {
         [self.subviews.firstObject addSubview:attachment.attachedView];
     }
+    
+    //range
+    [self.textStorage endEditing];
+    self.selectedRange = range;
 }
 
 - (instancetype)init
