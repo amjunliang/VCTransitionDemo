@@ -7,6 +7,7 @@
 //
 
 #import "MyTextView.h"
+#import "NSString+HTML.h"
 
 @interface MyTextView ()
 
@@ -186,7 +187,7 @@ static NSString const *kNSAttachment = @"NSAttachment";
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithAttributedString:self.textStorage];
     [self.attributedText enumerateAttributesInRange:self.attributedText.fullRange options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(NSDictionary<NSAttributedStringKey,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
         NSAttributedString *value = [attrString attributedSubstringFromRange:range];
-        NSLog(@"%@",value.string);
+        NSLog(@"%@",[value.string kv_encodeHTMLCharacterEntities]);
     }];
     
     return @"";

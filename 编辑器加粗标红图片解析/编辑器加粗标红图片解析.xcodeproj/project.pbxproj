@@ -10,6 +10,7 @@
 		2B4B685E1FEFA3D0000330C0 /* AshtonHTMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B68591FEFA3CF000330C0 /* AshtonHTMLWriter.m */; };
 		2B4B685F1FEFA3D0000330C0 /* AshtonIntermediate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B685B1FEFA3D0000330C0 /* AshtonIntermediate.m */; };
 		2B4B68601FEFA3D0000330C0 /* AshtonHTMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B685D1FEFA3D0000330C0 /* AshtonHTMLReader.m */; };
+		2B4B68691FEFE19F000330C0 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B68681FEFE19F000330C0 /* NSString+HTML.m */; };
 		2BCC93B41FEDDD3E00E925AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93B31FEDDD3E00E925AA /* AppDelegate.m */; };
 		2BCC93B71FEDDD3E00E925AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC93B61FEDDD3E00E925AA /* ViewController.m */; };
 		2BCC93BA1FEDDD3E00E925AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCC93B81FEDDD3E00E925AA /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		2B4B685B1FEFA3D0000330C0 /* AshtonIntermediate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AshtonIntermediate.m; sourceTree = "<group>"; };
 		2B4B685C1FEFA3D0000330C0 /* AshtonHTMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AshtonHTMLReader.h; sourceTree = "<group>"; };
 		2B4B685D1FEFA3D0000330C0 /* AshtonHTMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AshtonHTMLReader.m; sourceTree = "<group>"; };
+		2B4B68671FEFE19F000330C0 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		2B4B68681FEFE19F000330C0 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
 		2BCC93AF1FEDDD3E00E925AA /* 编辑器加粗标红图片解析.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "编辑器加粗标红图片解析.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCC93B21FEDDD3E00E925AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BCC93B31FEDDD3E00E925AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				2B4B685B1FEFA3D0000330C0 /* AshtonIntermediate.m */,
 				2BCC93C81FEDDD5B00E925AA /* MyTextView.h */,
 				2BCC93C91FEDDD5B00E925AA /* MyTextView.m */,
+				2B4B68671FEFE19F000330C0 /* NSString+HTML.h */,
+				2B4B68681FEFE19F000330C0 /* NSString+HTML.m */,
 				2BCC93CB1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.h */,
 				2BCC93CC1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m */,
 				2BCC93CE1FEEB93100E925AA /* ZYRichTextLayoutManager.h */,
@@ -184,6 +189,7 @@
 				2BCC93B71FEDDD3E00E925AA /* ViewController.m in Sources */,
 				2BCC93CD1FEE7FC600E925AA /* NSAttributedString+ZYRichTextEditer.m in Sources */,
 				2BCC93CA1FEDDD5B00E925AA /* MyTextView.m in Sources */,
+				2B4B68691FEFE19F000330C0 /* NSString+HTML.m in Sources */,
 				2BCC93D31FEEC59C00E925AA /* ZYRichTextAttachment.m in Sources */,
 				2B4B685E1FEFA3D0000330C0 /* AshtonHTMLWriter.m in Sources */,
 				2BCC93C21FEDDD3E00E925AA /* main.m in Sources */,
