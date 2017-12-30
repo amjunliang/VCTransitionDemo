@@ -43,9 +43,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     //[self.textView setTextContainerInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-    self.textView.maxNumberOfLines = 3;
-    self.textView.placeholder = @"请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字";
+    //self.textView.maxNumberOfLines = ;
+    self.textView.placeholder = @"请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字请输入文字";
     self.textView.placeholderTextColor = [UIColor redColor];
+    self.textView.autoGrow = YES;
  
     CountryModel *model = [[CountryModel alloc]init];
     model.id = 100;

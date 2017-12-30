@@ -22,7 +22,7 @@
 {
     CGFloat contentHeightSelf = [self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height;
     CGFloat contentHeightPlaceholder = [self.placeholderView sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height;
-    return self.text.length?contentHeightSelf:contentHeightPlaceholder;
+    return fmax(contentHeightPlaceholder, contentHeightSelf);
 }
 
 - (void)awakeFromNib

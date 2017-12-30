@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UITextViewPlace : UITextView
-
 @property (copy, nonatomic) NSString *placeholder;
 @property (retain, nonatomic) UIColor *placeholderTextColor;
 @property (nonatomic, assign) NSUInteger maxNumberOfLines;
