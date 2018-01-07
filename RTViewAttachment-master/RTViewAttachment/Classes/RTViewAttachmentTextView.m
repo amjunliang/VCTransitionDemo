@@ -310,7 +310,6 @@ static NSString *const RTAttachmentPlaceholderString = @"\uFFFC";
     
     if (textView.textStorage.length) {
         NSRange range = self.selectedRange;
-        NSLog(@"%@",NSStringFromRange(range));
         NSInteger index = range.location;
         if (index >= textView.textStorage.length) {
             index = textView.textStorage.length- 1;
@@ -322,13 +321,12 @@ static NSString *const RTAttachmentPlaceholderString = @"\uFFFC";
         NSMutableDictionary *att = [textView.textStorage attributesAtIndex:index effectiveRange:nil].mutableCopy;
         RTViewAttachment *attachment = [att objectForKey:NSAttachmentAttributeName];
         if ([attachment isKindOfClass:[RTViewAttachment class]]) {
-            [att removeObjectForKey:NSAttachmentAttributeName];
-            NSAttributedString *newlint = [[NSAttributedString alloc]initWithString:@"\n" attributes:att];
-            [textView.textStorage insertAttributedString:newlint atIndex:index];
-            
-            NSLog(@"%@",attachment);
+            if (index>0) {
+                [att removeObjectForKey:NSAttachmentAttributeName];
+                NSAttributedString *newlint = [[NSAttributedString alloc]initWithString:@"\n" attributes:att];
+                [textView.textStorage insertAttributedString:newlint atIndex:index];
+            }
         }
-
     }
     
 }

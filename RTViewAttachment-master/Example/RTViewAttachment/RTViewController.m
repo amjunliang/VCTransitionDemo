@@ -64,7 +64,7 @@
     //
     
     UIView *v = [RTTextVIew new];
-    v.frame = CGRectMake(0, 0, 100, 100);// 宽度自适应, 需要的是高度,
+    v.frame = CGRectMake(0, 0, 0, 1000);// 宽度自适应, 需要的是高度,
     [self.textView insertViewAttachment:[[RTViewAttachment alloc] initWithView:v
                                                                placeholderText:@"[searchbar]"
                                                                      fullWidth:YES]];
