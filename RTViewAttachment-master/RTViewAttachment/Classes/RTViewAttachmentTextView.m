@@ -304,6 +304,35 @@ static NSString *const RTAttachmentPlaceholderString = @"\uFFFC";
 
 #pragma mark - UITextView Delegate
 
+- (void)textViewDidChange:(UITextView *)textView
+{
+
+    
+    if (textView.textStorage.length) {
+        NSRange range = self.selectedRange;
+        NSLog(@"%@",NSStringFromRange(range));
+        NSInteger index = range.location;
+        if (index >= textView.textStorage.length) {
+            index = textView.textStorage.length- 1;
+            if (index<0) {
+                index = 0;
+            }
+        }
+        
+        NSMutableDictionary *att = [textView.textStorage attributesAtIndex:index effectiveRange:nil].mutableCopy;
+        RTViewAttachment *attachment = [att objectForKey:NSAttachmentAttributeName];
+        if ([attachment isKindOfClass:[RTViewAttachment class]]) {
+            [att removeObjectForKey:NSAttachmentAttributeName];
+            NSAttributedString *newlint = [[NSAttributedString alloc]initWithString:@"\n" attributes:att];
+            [textView.textStorage insertAttributedString:newlint atIndex:index];
+            
+            NSLog(@"%@",attachment);
+        }
+
+    }
+    
+}
+
 - (BOOL)textView:(UITextView *)textView
 shouldChangeTextInRange:(NSRange)range
  replacementText:(NSString *)text

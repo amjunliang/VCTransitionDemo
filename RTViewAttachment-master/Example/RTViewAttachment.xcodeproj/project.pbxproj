@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B66327F2001F6D20063EE1B /* RTTextVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B66327E2001F6D20063EE1B /* RTTextVIew.m */; };
 		59C5B8FC2FD4DF493682A717 /* libPods-RTViewAttachment_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA1EDE3C82049509BFADB52 /* libPods-RTViewAttachment_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		056635EDB30BA7AFCD969DBC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1AE4A98434B188FECB2ACCB7 /* Pods-RTViewAttachment_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTViewAttachment_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RTViewAttachment_Example/Pods-RTViewAttachment_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2B66327D2001F6D20063EE1B /* RTTextVIew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTTextVIew.h; sourceTree = "<group>"; };
+		2B66327E2001F6D20063EE1B /* RTTextVIew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTTextVIew.m; sourceTree = "<group>"; };
 		2CB33DF7DEDF4ACB10378DEC /* RTViewAttachment.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RTViewAttachment.podspec; path = ../RTViewAttachment.podspec; sourceTree = "<group>"; };
 		2F746502AE2E62BDF7C434D5 /* Pods-RTViewAttachment_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RTViewAttachment_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RTViewAttachment_Example/Pods-RTViewAttachment_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* RTViewAttachment_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTViewAttachment_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +100,8 @@
 				6003F59C195388D20070C39A /* RTAppDelegate.h */,
 				6003F59D195388D20070C39A /* RTAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				2B66327D2001F6D20063EE1B /* RTTextVIew.h */,
+				2B66327E2001F6D20063EE1B /* RTTextVIew.m */,
 				6003F5A5195388D20070C39A /* RTViewController.h */,
 				6003F5A6195388D20070C39A /* RTViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* RTAppDelegate.m in Sources */,
+				2B66327F2001F6D20063EE1B /* RTTextVIew.m in Sources */,
 				6003F5A7195388D20070C39A /* RTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

@@ -82,9 +82,8 @@
                                      proposedLineFragment:lineFrag
                                             glyphPosition:position
                                            characterIndex:charIndex];
-    if (self.isFullWidth) {
-        rect.size.width = CGRectGetWidth(lineFrag) - textContainer.lineFragmentPadding * 2;
-    }
+    rect.size.width = CGRectGetWidth(lineFrag) - textContainer.lineFragmentPadding * 2;
+    self.attachedView.frame = rect;
     return rect;
 }
 
