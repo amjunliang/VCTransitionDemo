@@ -6,7 +6,7 @@
 //  Copyright © 2018年 马俊良. All rights reserved.
 //
 
-#import "UIView+Hightlight.h"
+#import "UIView+TouchUpInsideEvent.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 #import <objc/runtime.h>
 
@@ -50,7 +50,7 @@
 
 @end
 
-@implementation UIView (Hightlight)
+@implementation UIView (TouchUpInsideEvent)
 
 - (void)addViewTouchUpInsideEventWithBlock:(ViewTouchUpInsideBlock)block
 {
@@ -116,16 +116,22 @@ static char kAssociatedObjectKey_viewTouchUpInsideBlock;
 {
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         if (ges.touchContain) {
-            self.alpha = 0.6;
+            for (UIView *v in self.subviews) {
+                v.alpha = 0.6;
+            }
         }else{
-            self.alpha = 1;
+            for (UIView *v in self.subviews) {
+                v.alpha = 1;
+            }
         }
         
         if (ges.state == UIGestureRecognizerStateEnded||
             ges.state == UIGestureRecognizerStateFailed||
             ges.state == UIGestureRecognizerStateCancelled
             ) {
-            self.alpha = 1;
+            for (UIView *v in self.subviews) {
+                v.alpha = 1;
+            }
         }
         
     } completion:nil];

@@ -12,7 +12,7 @@
 		2B45A48B2013D5A8005E6803 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B45A4892013D5A8005E6803 /* Main.storyboard */; };
 		2B45A4902013D5A8005E6803 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B45A48E2013D5A8005E6803 /* LaunchScreen.storyboard */; };
 		2B45A4932013D5A8005E6803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45A4922013D5A8005E6803 /* main.m */; };
-		2B45A49B2013E2FC005E6803 /* UIView+Hightlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45A4992013E2FC005E6803 /* UIView+Hightlight.m */; };
+		2B45A49B2013E2FC005E6803 /* UIView+TouchUpInsideEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B45A4992013E2FC005E6803 /* UIView+TouchUpInsideEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,8 @@
 		2B45A48F2013D5A8005E6803 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B45A4912013D5A8005E6803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B45A4922013D5A8005E6803 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2B45A4992013E2FC005E6803 /* UIView+Hightlight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hightlight.m"; sourceTree = "<group>"; };
-		2B45A49A2013E2FC005E6803 /* UIView+Hightlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Hightlight.h"; sourceTree = "<group>"; };
+		2B45A4992013E2FC005E6803 /* UIView+TouchUpInsideEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TouchUpInsideEvent.m"; sourceTree = "<group>"; };
+		2B45A49A2013E2FC005E6803 /* UIView+TouchUpInsideEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TouchUpInsideEvent.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 				2B45A4832013D5A8005E6803 /* AppDelegate.h */,
 				2B45A4842013D5A8005E6803 /* AppDelegate.m */,
 				2B45A4862013D5A8005E6803 /* ViewController.h */,
-				2B45A49A2013E2FC005E6803 /* UIView+Hightlight.h */,
-				2B45A4992013E2FC005E6803 /* UIView+Hightlight.m */,
+				2B45A49A2013E2FC005E6803 /* UIView+TouchUpInsideEvent.h */,
+				2B45A4992013E2FC005E6803 /* UIView+TouchUpInsideEvent.m */,
 				2B45A4872013D5A8005E6803 /* ViewController.m */,
 				2B45A4892013D5A8005E6803 /* Main.storyboard */,
 				2B45A48E2013D5A8005E6803 /* LaunchScreen.storyboard */,
@@ -145,7 +145,7 @@
 			files = (
 				2B45A4882013D5A8005E6803 /* ViewController.m in Sources */,
 				2B45A4932013D5A8005E6803 /* main.m in Sources */,
-				2B45A49B2013E2FC005E6803 /* UIView+Hightlight.m in Sources */,
+				2B45A49B2013E2FC005E6803 /* UIView+TouchUpInsideEvent.m in Sources */,
 				2B45A4852013D5A8005E6803 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

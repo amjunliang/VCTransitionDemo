@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UIView+Hightlight.h"
+#import "UIView+TouchUpInsideEvent.h"
 
 @interface ViewController ()<UIScrollViewDelegate>
 
@@ -58,6 +58,12 @@ static CGFloat margin = 60;
         v.backgroundColor = [UIColor orangeColor];
         v.clipsToBounds = YES;
         v.layer.cornerRadius = 10;
+        
+        UILabel *lab = [UILabel new];
+        lab.text = @"lab";
+        [v addSubview:lab];
+        [lab sizeToFit];
+        
         [self.scrollView addSubview:v];
     
         [v addViewTouchUpInsideEventWithBlock:^(UIView *view) {

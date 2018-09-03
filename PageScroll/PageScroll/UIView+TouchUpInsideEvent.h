@@ -10,7 +10,7 @@
 @class HightliteGesture;
 typedef void (^ViewTouchUpInsideBlock)(UIView *view);
 
-@interface UIView (Hightlight)<UIGestureRecognizerDelegate>
+@interface UIView (TouchUpInsideEvent)<UIGestureRecognizerDelegate>
 
 - (void)addViewTouchUpInsideEventWithBlock:(ViewTouchUpInsideBlock)block;
 - (void)removeViewTouchUpInsideEvent;
